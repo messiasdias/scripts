@@ -1,0 +1,2 @@
+#!/bin/bash
+openvpn3 session-start --config /home/messias/Downloads/profile-71.ovpn

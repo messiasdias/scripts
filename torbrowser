@@ -1,0 +1,4 @@
+#!/bin/bash
+#/home/messias/Área\ de\ Trabalho/./start-tor-browser.desktop
+cd /
+sh -c '"$(dirname "$*")"/opt/tor-browser/Browser/start-tor-browser  --detach || ([ ! -x "$(dirname "$*")"/opt/tor-browser/Browser/start-tor-browser ] && "$(dirname "$*")"/start-tor-browser --detach)' dummy %k

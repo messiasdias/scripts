@@ -1,0 +1,4 @@
+#!/bin/bash
+echo -e "P@55w0rd123\n" | sudo -S service apache2 stop &&
+gnome-terminal --tab -- /bin/sh -c 'echo Starting UI; cd sc.sigcfc.com.br.repo; docker-compose up'
+gnome-terminal --tab -- /bin/sh -c 'echo Starting API; cd sigcfc-repo; docker-compose up'
