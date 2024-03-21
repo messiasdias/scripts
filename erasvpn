@@ -1,2 +1,10 @@
 #!/bin/bash
-openvpn3 session-start --config /home/messias/Downloads/profile-71.ovpn
+#openvpn3 session-start --config /home/messias/Downloads/profile-71.ovpn
+
+if [ "$1" = "-r" ]; then 
+echo -e "P@55w0rd123\n" | sudo -s systemctl restart NetworkManager && sleep 30
+fi;
+
+erasvpn-disconnect-all 
+openvpn3-autoload --directory ~/.openvpn3/autoload &&
+openvpn3 sessions-list
