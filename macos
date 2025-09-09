@@ -1,7 +1,23 @@
 #!/bin/bash
-docker run -it \
+# docker run -it \
+#     --device /dev/kvm \
+#     -p 50922:10022 \
+#     -v /tmp/.X11-unix:/tmp/.X11-unix \
+#     -e "DISPLAY=${DISPLAY:-:0.0}" \
+#     sickcodes/docker-osx:latest
+
+    # --privileged \
+    #  --restart unless-stopped \
+    # --device /dev/sda:/dev/sda \
+
+qemu-img create -f qcow2 ~/.macos.img 128G &&
+docker run -d \
+    --name macos \
+    --privileged \
     --device /dev/kvm \
     -p 50922:10022 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e "DISPLAY=${DISPLAY:-:0.0}" \
+    -v ~/.macos.img:/image \
+    --restart on-failure \
     sickcodes/docker-osx:latest
