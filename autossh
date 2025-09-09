@@ -1,0 +1,23 @@
+#!/bin/bash
+SSH_HOST=""
+SSH_USER="root"
+SSH_PASS=""
+SSH_PORT=22
+
+if [ "$1" != "" ]; then 
+ SSH_HOST=$1
+fi;
+
+if [ "$2" != "" ]; then 
+ SSH_USER=$2
+fi;
+
+if [ "$3" != "" ]; then 
+ SSH_PASS=$3
+fi;
+
+if [ $4 != "" ]; then 
+ SSH_PORT=$4
+fi;
+
+sshpass -p "$SSH_PASS" ssh -p $SSH_PORT $SSH_USER@$SSH_HOST

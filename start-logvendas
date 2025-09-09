@@ -1,4 +1,0 @@
-#!/bin/bash
-docker stop
-echo -e "P@55w0rd123\n" | sudo -S service apache2 stop &&
-gnome-terminal --tab -- /bin/sh -c 'echo Starting API; cd ~/www/joaocosta/logvendas; docker-compose up'

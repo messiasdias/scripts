@@ -1,0 +1,2 @@
+#!/bin/bash
+autossh "45.235.144.29" "root" "S@imon0918" 7122
